@@ -92,7 +92,7 @@ export default {
       return
     }
 
-    this.error = "404"
+    this.error = new Error("404")
   },
 
   mounted () {
