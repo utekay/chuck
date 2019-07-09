@@ -11,7 +11,6 @@
         Loading...
       </p>
       <JokeTools v-bind:joke="joke"
-        v-on:copyLink="copyLink"
         v-on:getJoke="() => getJoke()"
       />
     </div>
@@ -71,16 +70,6 @@ export default {
 
     onPopState (ev) {
       this.joke = ev.state
-    },
-
-    copyLink () {
-      let input = document.createElement('input')
-      document.body.appendChild(input)
-      input.value = window.location.href
-      input.select()
-      document.execCommand('copy')
-      document.body.removeChild(input)
-      alert('Copied!')
     }
   },
 

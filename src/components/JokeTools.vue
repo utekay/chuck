@@ -11,7 +11,7 @@
     <li v-if="props.joke"
       class="tools__item"
     >
-      <a v-on:click.prevent="listeners['copyLink']"
+      <a v-on:click.prevent="onCopyLinkClick"
         class="tools__link"
         href="#"
       >
@@ -20,6 +20,18 @@
     </li>
   </ul>
 </template>
+
+<script>
+const onCopyLinkClick = () => {
+  let input = document.createElement('input')
+  document.body.appendChild(input)
+  input.value = window.location.href
+  input.select()
+  document.execCommand('copy')
+  document.body.removeChild(input)
+  alert('Copied!')
+}
+</script>
 
 <style lang="css">
 .tools {
