@@ -40,6 +40,6 @@ const onCopyLinkClick = () => {
   list-style: none;
 }
 .tools__item {
-  margin: 3% 0;
+  margin: 1rem 0;
 }
 </style>
