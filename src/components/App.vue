@@ -110,13 +110,13 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   height: 100%;
 }
 .app__main {
   margin: auto;
+  width: 100%;
 }
 .app__footer {
-  margin: auto;
+  margin-top: auto;
 }
 </style>

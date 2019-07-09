@@ -1,12 +1,16 @@
 <template lang="html" functional>
-  <p>
+  <div class="footer">
     <a href="https://github.com/utekay/chuck"
       rel="nofollow"
     >
       https://github.com/utekay/chuck
     </a>
-  </p>
+  </div>
 </template>
 
-<style lang="css" scoped>
+<style lang="css">
+.footer {
+  padding: 55px 0;
+  text-align: center;
+}
 </style>
