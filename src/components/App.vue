@@ -60,13 +60,17 @@ export default {
 
       this.joke = data.value
 
-      history.replaceState(this.joke, '', `/${this.joke.id}`)
+      window.history.pushState(this.joke, '', `/${this.joke.id}`)
     },
 
     onKeyDown (ev) {
       if (ev.which == 32) {
         this.getJoke()
       }
+    },
+
+    onPopState (ev) {
+      this.joke = ev.state
     },
 
     copyLink () {
@@ -97,9 +101,11 @@ export default {
 
   mounted () {
     window.addEventListener('keydown', this.onKeyDown)
+    window.addEventListener('popstate', this.onPopState)
   },
   beforeDestroy () {
     window.removeEventListener('keydown', this.onKeyDown)
+    window.removeEventListener('popstate', this.onPopState)
   }
 }
 </script>
